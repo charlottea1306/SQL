@@ -1,0 +1,29 @@
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, item_name TEXT, colour TEXT, size INTEGER, price INTEGER, quantity INTEGER);
+
+INSERT INTO clothing_store VALUES (1, "Dungarees", "Blue", 8, 24.99, 4);
+INSERT INTO clothing_store VALUES (2, "Dungarees", "Blue", 12, 24.99, 2);
+INSERT INTO clothing_store VALUES (3, "Dungarees", "Black", 8, 24.99,7);
+INSERT INTO clothing_store VALUES (4, "Dungarees", "Black", 10, 24.99, 3);
+INSERT INTO clothing_store VALUES (5, "Dungarees", "Black", 12, 24.99, 1);
+INSERT INTO clothing_store VALUES (6, "Dungarees", "Black", 14, 24.99,0);
+INSERT INTO clothing_store VALUES (7, "Mini Skirt", "Purple", 8, 19.99 ,2);
+INSERT INTO clothing_store VALUES (8, "Mini Skirt", "Purple", 10, 19.99 ,4);
+INSERT INTO clothing_store VALUES (9, "Shorts", "Black", 12, 12.99, 7);
+INSERT INTO clothing_store VALUES (10, "Shorts", "Black", 14, 12.99, 0);
+INSERT INTO clothing_store VALUES (11, "Shorts", "Black", 16, 12.99, 2);
+INSERT INTO clothing_store VALUES (12, "Jeans", "Blue", 8, 22.99, 1);
+INSERT INTO clothing_store VALUES (13, "Jeans", "Blue", 10, 22.99, 0);
+INSERT INTO clothing_store VALUES (14, "Jeans", "Blue", 12, 22.99, 4);
+INSERT INTO clothing_store VALUES (15, "Jeans", "Blue", 14, 22.99, 2);
+
+SELECT * from clothing_store
+ORDER BY price;
+
+SELECT * from clothing_store
+where size > 12 and quantity >= 1
+order by price;
+
+select item_name, price, quantity from clothing_store
+GROUP BY item_name
+HAVING size = 8
+order by price;
